@@ -2,30 +2,30 @@
 
 module AND_tb();
 
-	reg Input_A;
-	reg Input_B;
+	reg test_Input_A;
+	reg test_Input_B;
 
-	wire Output;
+	wire test_Output;
 
-	AND AND_test(
-		.Input_A(InputA),
-		.Input_B(InputB),
-		.Output(Output)
+	AND u0(
+		.Input_A(test_Input_A),
+		.Input_B(test_Input_B),
+		.Output(test_Output)
 	);
 
 	initial begin
 
-	#100 Input_A <= 1'b0; Input_B <= 1'b0;
-        #20 $display("A=%h, B=%h, out=%h", Input_A, Input_B, out);
+	#100 test_Input_A <= 1'b0; test_Input_B <= 1'b0;
+    #20 $display("A=%h, B=%h, out=%h", test_Input_A, test_Input_B, test_Output);
 
-	#100 Input_A <= 1'b1; Input_B <= 1'b0;
-        #20 $display("A=%h, B=%h, out=%h", Input_A, Input_B, out);
+	#100 test_Input_A <= 1'b1; test_Input_B <= 1'b0;
+    #20 $display("A=%h, B=%h, out=%h", test_Input_A, test_Input_B, test_Output);
 
-	#100 Input_A <= 1'b0; Input_B <= 1'b1;
-        #20 $display("A=%h, B=%h, out=%h", Input_A, Input_B, out);
+	#100 test_Input_A <= 1'b0; test_Input_B <= 1'b1;
+    #20 $display("A=%h, B=%h, out=%h", test_Input_A, test_Input_B, test_Output);
 
-	#100 Input_A <= 1'b1; Input_B <= 1'b1;
-        #20 $display("A=%h, B=%h, out=%h", Input_A, Input_B, out);
+	#100 test_Input_A <= 1'b1; test_Input_B <= 1'b1;
+    #20 $display("A=%h, B=%h, out=%h", test_Input_A, test_Input_B, test_Output);
 
 	end
 
